@@ -227,9 +227,10 @@
         <div id="center-instruction" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center pointer-events-none w-full z-0">
             <div class="flex items-center justify-center gap-4 mb-2">
                 <span id="hand-icon" class="text-6xl animate-bounce">👋</span>
-                <h2 id="instruction-text" class="text-6xl md:text-8xl font-bold text-white neon-pulse transition-all duration-700">举起双手</h2>
+                <h2 id="instruction-text" class="text-6xl md:text-8xl font-bold text-white neon-pulse transition-all duration-700">举起双手</h2>  
             </div>
-            <p id="sub-instruction" class="mt-4 text-xl md:text-2xl text-pink-200/80 font-light tracking-[0.3em]">让魔法发生</p>
+            <p id="sub-instruction2" class="mt-4 text-xl md:text-2xl text-pink-200/80 font-light tracking-[0.3em]">让魔法发生</p>
+            <p id="sub-instruction" class="mt-4 text-xs md:text-xs text-pink-200/80 font-light tracking-[0.3em]">(如果相机不可用，可以手机点击屏幕or电脑点击空格)</p>
         </div>
 
         <!-- 摄像头预览框 -->
@@ -288,7 +289,7 @@
 
                         <!-- 第二页：快递信息 (纯文字，带滚动) -->
                         <div id="card-page-2" class="w-full h-full flex flex-col hidden">
-                            <h3 class="text-xl font-bold text-purple-300 mb-4 font-handwriting text-center mt-2">一点小小的歉意</h3>
+                            <h3 class="text-xl font-bold text-purple-300 mb-4 font-handwriting text-center mt-2">想对你说</h3>
                             <!-- 滚动区域 -->
                             <div id="typewriter-text-2" class="text-left text-gray-200 space-y-3 font-light leading-6 text-sm md:text-base border-l-2 border-purple-500/50 pl-4 mb-4 flex-grow scrollable-text h-full"></div>
                             
@@ -352,6 +353,7 @@
             statusDot: document.getElementById('status-dot'),
             mainText: document.getElementById('instruction-text'),
             subText: document.getElementById('sub-instruction'),
+            subText2: document.getElementById('sub-instruction2'),
             handIcon: document.getElementById('hand-icon'),
             blowMeter: document.getElementById('blow-meter-container'),
             blowBar: document.getElementById('blow-meter-bar'),
@@ -674,7 +676,7 @@
                 startSequence();
             }
         });
-        
+
         document.addEventListener('touchstart', function(event) {
             // 移动端触摸屏幕也可以触发
             startSequence();
@@ -692,6 +694,7 @@
             let count = 3;
             ui.mainText.innerText = "";
             ui.subText.innerText = "";
+            ui.subText2.innerText = "";
             transitionTo('3');
             const timer = setInterval(() => {
                 count--;
@@ -711,6 +714,7 @@
             ui.settingsPanel.style.display = 'flex';
             ui.mainText.innerText = "";
             ui.subText.innerText = "";
+            ui.subText2.innerText = "";
             ui.topBanner.classList.remove('hidden'); 
             ui.statusText.innerText = "MIC LISTENING...";
             ui.blowMeter.style.opacity = '1';
@@ -775,19 +779,22 @@
             "新的一岁，愿你做事更利落，思虑更周全，",
             "在成长中沉淀出属于自己的光芒！",
             "我不再只是想做照耀你的太阳，",
-            "更期待我们彼此照亮，携手并肩，成为对方的力量。",
+            "更期待我们彼此照亮，",
+            "携手并肩，成为对方的力量。",
             "但在这所有愿望之前，我最最希望的",
             "是你好好爱自己——",
             "吃得健康一点，动得开心一点，",
-            "让那个总是躲避聚光灯的你，",
-            "能够勇敢的站到人生舞台上。",
+            "让那个本就耀眼的你，",
+            "由内而外焕发光彩。",
             "你值得被世界温柔以待，",
             "更值得被你自己，深深珍爱。",
-            "我也愿意相信——，",
+            "我也愿意相信——",
             "你会变得更好，你能变得更好！",
-            "我更愿意相信——，",
+            "我更愿意相信——",
             "纵使我们历经纷争与磨难，",
             "终会结出幸福的硕果!",
+            "最后——",
+            "答应我的你要做到哦!",
             
         ];
 
