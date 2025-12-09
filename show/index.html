@@ -674,6 +674,11 @@
                 startSequence();
             }
         });
+        
+        document.addEventListener('touchstart', function(event) {
+            // 移动端触摸屏幕也可以触发
+            startSequence();
+        });
 
         function startSequence() {
             if (currentState !== STATE.IDLE || transitionLock) return;
