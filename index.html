@@ -1038,7 +1038,7 @@
             const camera = new Camera(video, { 
                 onFrame: async () => { 
                     frameCount++;
-                    // 智能降频：每 3 帧处理一次，相当于 20FPS，既流畅又不卡顿
+                    // 智能降频：每 3 帧处理一次，相当于 20FPS，既流畅又不卡顿 
                     if (frameCount % 3 === 0) {
                         await hands.send({image: video}); 
                     }
